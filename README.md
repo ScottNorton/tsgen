@@ -1,16 +1,24 @@
 # tsgen
 
-A utility to generate TypeScript type declaration files (`*.d.ts`) for C# members decorated with `[JSExport]` in a browser-wasm project. This tool scans the C# source code and produces a `.d.ts` file, allowing strong typing of members across code bases.
+A utility to generate TypeScript type declaration files (`*.d.ts`) for C# members decorated with `[JSExport]` in a browser-wasm project. This tool scans the C# source code and produces a `.d.ts` file, allowing strong typing of members across codebases.
+
+---
 
 ### Why wasn't reflection used?
-Well, due to **browser limitations** with WebAssembly that are typically available in desktop .NET are not fully supported in browser-based environments and vice-versa. If you attempt to load browser-specific assemblies or libraries in a traditional desktop .NET application, you will encounter **platform exceptions**. I didn't have the time to work around this. Plus, how else would you get the code comments?
+
+Due to **browser limitations** with WebAssembly, reflection—typically available in desktop .NET—is not fully supported in browser-based environments, and vice versa. If you attempt to load browser-specific assemblies or libraries in a traditional desktop .NET application, you will encounter **platform exceptions**. Also, using reflection wouldn't help in extracting code comments!
+
+---
 
 ## Features
-- Automatically generates TypeScript definitions for `[JSExport]` decorated C# methods.
-- Translates C# types to their equivalent TypeScript types, including async methods.
-- Includes C# method comments as JSDoc annotations in the TypeScript definitions.
-- Handles namespaces, classes, and method signatures with parameters.
-- Some features supported by this tool are not yet released in .NET.
+
+- **Automatic TypeScript definitions** for `[JSExport]` decorated C# methods.
+- Translates C# types to their **TypeScript equivalents**, including async methods.
+- Includes C# method comments as **JSDoc annotations** in the TypeScript definitions.
+- Handles **namespaces**, classes, and method signatures with parameters.
+- Supports **unreleased .NET features** not yet available in standard tooling.
+
+---
 
 ## Usage
 
@@ -22,4 +30,3 @@ Be sure to **change the value of the `Namespace`** in the tool to match your des
 
 ```powershell
 PS C:\Project\tsgen> ./tsgen ../ ../tstype
-```

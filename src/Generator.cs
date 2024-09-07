@@ -1,4 +1,8 @@
-﻿namespace TSExportGenerator {
+﻿// ╔═══════════════════════════════════════════════════════════════════════════════╗
+//    File: Generator.cs - Author: Scott Norton
+// ╚═══════════════════════════════════════════════════════════════════════════════╝
+
+namespace TSExportGenerator {
 	using System;
 	using System.Collections.Generic;
 	using System.IO;

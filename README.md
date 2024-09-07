@@ -18,4 +18,4 @@ In this example, the tool is located in the target project folder. The first par
 Be sure to **change the value of the `Namespace`** in the tool to match your desired namespace (e.g., `VoxelML`) prior to building and running.
 
 ```powershell
-PS C:\VoxelML\VoxelML\VoxelML\tsgen> ./tsgen ../ ../tstype
+PS C:\Project\tsgen> ./tsgen ../ ../tstype

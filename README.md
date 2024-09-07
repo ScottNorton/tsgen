@@ -6,7 +6,7 @@ A utility to generate TypeScript type declaration files (`*.d.ts`) for C# member
 
 ### Why wasn't reflection used?
 
-Due to **browser limitations** with WebAssembly, reflection—typically available in desktop .NET—is not fully supported in browser-based environments, and vice versa. If you attempt to load browser-specific assemblies or libraries in a traditional desktop .NET application, you will encounter **platform exceptions**. Also, using reflection wouldn't help in extracting code comments!
+If you attempt to load browser-specific assemblies or libraries in a traditional desktop .NET application, you will encounter **platform exceptions**. Also, using reflection wouldn't help in extracting code comments!
 
 ---
 

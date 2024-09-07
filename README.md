@@ -23,7 +23,3 @@ Be sure to **change the value of the `Namespace`** in the tool to match your des
 ```powershell
 PS C:\Project\tsgen> ./tsgen ../ ../tstype
 ```
-
-### Explanation in "Why not reflection?":
-This section explains that due to **browser limitations** with WebAssembly, features like **reflection** that are typically available in desktop .NET are not fully supported in browser-based environments. It highlights the performance, security, and static nature of WebAssembly and why **static analysis** is used to generate TypeScript definitions instead.
-

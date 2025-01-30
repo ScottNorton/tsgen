@@ -15,7 +15,7 @@ If you attempt to load browser-specific assemblies or libraries in a traditional
 - **Automatic TypeScript definitions** for `[JSExport]` decorated C# methods.
 - Translates C# types to their **TypeScript equivalents**, including async methods.
 - Includes C# method comments as **JSDoc annotations** in the TypeScript definitions.
-- Handles **namespaces**, classes, and method signatures with parameters.
+- Handles **namespaces**, classes, and method signatures with parameters or **attributes**.
 - Supports **.NET features** not yet available in the standard workload 💪
 
 ---

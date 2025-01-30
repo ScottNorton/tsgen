@@ -4,7 +4,7 @@ A utility to generate TypeScript type declaration files (`*.d.ts`) for C# member
 
 ---
 
-### Why wasn't reflection used?
+## Why wasn't reflection used?
 
 If you attempt to load browser-specific assemblies or libraries in a traditional desktop .NET application, you will encounter **platform exceptions**. Also, using reflection wouldn't help in extracting code comments!
 

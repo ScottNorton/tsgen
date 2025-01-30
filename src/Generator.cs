@@ -1,4 +1,4 @@
-﻿// ╔═══════════════════════════════════════════════════════════════════════════════╗
+// ╔═══════════════════════════════════════════════════════════════════════════════╗
 //    File: Generator.cs - Author: Scott Norton
 // ╚═══════════════════════════════════════════════════════════════════════════════╝
 
@@ -10,7 +10,7 @@ namespace TSExportGenerator {
 	using System.Text.RegularExpressions;
 
 	public partial class GenerateTypeScriptDefinitions(string csharpProjectPath, string tsProjectPath) {
-		string Namespace = "VoxelML";
+		readonly string Namespace = "VoxelML";
 
 		[GeneratedRegex(@"<param name=""(.+?)"">(.+?)</param>")]
 		private static partial Regex ParameterName();
@@ -33,7 +33,7 @@ namespace TSExportGenerator {
 				for (int i = 0; i < fileLines.Length; i++) {
 					string line = fileLines[i].Trim();
 
-					if (line.StartsWith("namespace") && !line.Contains(Namespace))
+					if (line.StartsWith("namespace") && !line.Contains(this.Namespace))
 						break;
 
 					if (line.StartsWith("public") && line.Contains("class"))
@@ -204,7 +204,7 @@ namespace TSExportGenerator {
 				writer.WriteLine("/** Automatically generated for C# JSExport decorated members. */");
 
 				writer.WriteLine("export module dotnetEx {");
-				writer.WriteLine($"\texport interface {Namespace} {{");
+				writer.WriteLine($"\texport interface {this.Namespace} {{");
 				foreach ((string className, List<string> methods) in tsDefinitions) {
 					writer.WriteLine($"\t\t{className}: {{");
 					foreach (string method in methods) {
@@ -214,7 +214,7 @@ namespace TSExportGenerator {
 				}
 				writer.WriteLine("\t}");
 				writer.WriteLine();
-				writer.WriteLine($"\tconst {Namespace}: {Namespace};");
+				writer.WriteLine($"\tconst {this.Namespace}: {this.Namespace};");
 				writer.WriteLine("}");
 				writer.WriteLine();
 				writer.WriteLine("export type dotnetExports = typeof dotnetEx;");

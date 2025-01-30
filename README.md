@@ -16,7 +16,7 @@ If you attempt to load browser-specific assemblies or libraries in a traditional
 - Translates C# types to their **TypeScript equivalents**, including async methods.
 - Includes C# method comments as **JSDoc annotations** in the TypeScript definitions.
 - Handles **namespaces**, classes, and method signatures with parameters.
-- Supports **unreleased .NET features** not yet available in the standard workload 💪
+- Supports **.NET features** not yet available in the standard workload 💪
 
 ---
 
